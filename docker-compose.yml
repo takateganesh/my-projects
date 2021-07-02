@@ -1,0 +1,17 @@
+version: '3'
+
+services:  
+  
+  swaggerui_oak:
+    container_name: oak_swaggerui_oak
+    image: swaggerapi/swagger-ui:v3.20.4
+    ports:
+      - "8020:8080"
+    environment:
+      - API_URL=https://oak-api-test.treelet.net/org
+      - API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidTEiLCJlbWFpbCI6InJhcmVzcEBheHoucm8iLCJleHAiOjE1NDY5MDgzNzh9.aSVzeqK19UXVrPZ8GIg5nFzKjYAF3JdzbBcgBN9mqFE
+    restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge
